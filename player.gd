@@ -1,17 +1,28 @@
 extends Area2D
+class_name Player
 
 signal hit
 
-@export var speed = 400
+@export var speed := 400
 var screen_size 
+var shielded = false 
 
 
 func start(pos):
 	position = pos
 	show()
 	$CollisionShape2D.disabled = false
+	shielded = false
+	$ShieldSprite.hide()
 	
-
+func activate_shield():
+	shielded = true
+	$ShieldSprite.show()
+	
+func deactivate_shield():
+	shielded = false
+	$ShieldSprite.hide()
+	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
@@ -45,6 +56,16 @@ func _process(delta: float) -> void:
 	position = position.clamp(Vector2.ZERO, screen_size)
 	
 func _on_body_entered(_body) -> void:
-	hide()
-	hit.emit()
-	$CollisionShape2D.set_deferred("disabled", true)
+	if shielded:
+		deactivate_shield()
+		$ShieldBreakSound.play()
+		print("¡El escudo te salvó!")
+	else:
+		hide()
+		hit.emit()
+		$CollisionShape2D.set_deferred("disabled", true)
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area is Shield:
+		area.picked_up.emit()
