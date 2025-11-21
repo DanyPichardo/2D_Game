@@ -1,6 +1,6 @@
 Primer juego en 2D, tipo "top-view".
 
------------------------- CONTROLES ------------------------
+------------------------ CONTROLES ------------------------\n
 W = Arriba
 A = Izquierda
 S = Abajo
