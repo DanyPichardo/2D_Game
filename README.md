@@ -1,12 +1,14 @@
-Primer juego en 2D, tipo "top-view".
+Juego en 2D, tipo "top-view".
 
------------------------- CONTROLES ------------------------\n
+------------------------ CONTROLES ------------------------
+
 W = Arriba
 A = Izquierda
 S = Abajo
 D = Derecha
 
 ------------------------ POWER-UPS ------------------------
+
 Escudo:
 Una vez lo tomas, te protege del primer contacto con un enemigo.
 
