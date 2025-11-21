@@ -1,17 +1,17 @@
 Juego en 2D, tipo "top-view".
 
------------------------- CONTROLES ------------------------
+------------------------ *CONTROLES* ------------------------
 
 W = Arriba
 A = Izquierda
 S = Abajo
 D = Derecha
 
------------------------- POWER-UPS ------------------------
+------------------------ *POWER-UPS* ------------------------
 
 Escudo:
 Una vez lo tomas, te protege del primer contacto con un enemigo.
 
------------------ ESTRUCTURA DE CARPETAS ------------------
+----------------- *ESTRUCTURA DE CARPETAS* ------------------
 
 
